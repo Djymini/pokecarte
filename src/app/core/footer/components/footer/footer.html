@@ -1,0 +1,15 @@
+<footer class="footer-basic">
+  <div class="social">
+    @for (socialNetwork of socialNetworks; track socialNetwork){
+      <a href="{{socialNetwork.link}}" target="_blank"><i class="{{socialNetwork.icon}}" style="font-size: 2rem"></i></a>
+    }
+  </div>
+
+  <ul class="list-inline">
+    @for(item of appPages; track item){
+      <li class="list-inline-item"><a routerLink="{{item.link}}">{{item.name}}</a></li>
+    }
+  </ul>
+
+  <p class="copyright">{{nameApp}} © 2025</p>
+</footer>

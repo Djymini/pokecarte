@@ -1,14 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Header } from '@app/core/header/components/header/header';
-import {provideZonelessChangeDetection} from '@angular/core';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ActivatedRoute} from '@angular/router';
+import { Footer } from '@app/core/footer/components/footer/footer';
 import {of} from 'rxjs';
+import {provideZonelessChangeDetection} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
-describe('Header', () => {
-  let component: Header;
-  let fixture: ComponentFixture<Header>;
+describe('Footer', () => {
+  let component: Footer;
+  let fixture: ComponentFixture<Footer>;
   const mockActivatedRoute = {
     params: of({}),
     queryParams: of({}),
@@ -17,12 +16,12 @@ describe('Header', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Header, HttpClientTestingModule],
+      imports: [Footer],
       providers: [provideZonelessChangeDetection(), {provide: ActivatedRoute, useValue: mockActivatedRoute}]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Header);
+    fixture = TestBed.createComponent(Footer);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

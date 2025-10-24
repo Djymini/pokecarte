@@ -5,6 +5,7 @@ import {HeaderSearchbar} from '../header-searchbar/header-searchbar';
 import {CartButton} from '../cart-button/cart-button';
 import {AuthService} from '../../../../features/auth/services/auth.service';
 import {UserButton} from '../user-button/user-button';
+import {NAME_APP} from '../../../../shared/utilis/constants';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,7 @@ export class Header {
   authService = inject(AuthService);
   isAuthenticated = this.authService.isAuthenticated;
 
-  nameApp: string = "Pokécarte";
+  nameApp: string = NAME_APP;
   navbarItems: NavbarItem[] = [
     {name: "Accueil", link: "/"},
     {name: "Nos produits", link: "/products"},
