@@ -1,13 +1,17 @@
 <footer class="footer-basic">
   <div class="social">
     @for (socialNetwork of socialNetworks; track socialNetwork){
-      <a href="{{socialNetwork.link}}" target="_blank"><i class="{{socialNetwork.icon}}" style="font-size: 2rem"></i></a>
+      <a href="{{socialNetwork.link}}" target="_blank">
+        <i class="{{socialNetwork.icon}}" style="font-size: 2rem"></i>
+      </a>
     }
   </div>
 
   <ul class="list-inline">
-    @for(item of appPages; track item){
-      <li class="list-inline-item"><a routerLink="{{item.link}}">{{item.name}}</a></li>
+    @for(page of appPages; track page){
+      <li class="list-inline-item">
+        <a routerLink="{{page.link}}">{{page.name}}</a>
+      </li>
     }
   </ul>
 
