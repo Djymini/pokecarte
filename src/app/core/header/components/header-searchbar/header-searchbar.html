@@ -1,0 +1,11 @@
+<form class="form" [formGroup]="searchForm" (submit)="onSubmit()">
+  <button type="submit" [disabled]="searchForm.invalid">
+    <i class="pi pi-search" style="font-size: 1rem"></i>
+  </button>
+
+  <input class="input" placeholder="Recherchez un jeu" type="text" formControlName="search">
+
+  <button class="reset" type="reset">
+    <i class="pi pi-times" style="font-size: 1rem"></i>
+  </button>
+</form>
