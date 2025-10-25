@@ -1,0 +1,29 @@
+.banner {
+  position: relative;
+  width: 100%;
+  padding: 32px;
+  background-color: var(--background-second);
+}
+
+.element-container {
+  position: relative;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.element-container img {
+  width: auto;
+  height: 180px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+  gap: 8px;
+}

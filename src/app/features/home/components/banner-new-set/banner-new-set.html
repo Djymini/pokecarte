@@ -1,0 +1,11 @@
+<div class="banner">
+  <div class="element-container">
+    <img [ngSrc]="newSet().logo + '.png'" [alt]="newSet().name" width="484.77" height="180" priority>
+    <app-button-with-gradient [nameButton]="nameButton"></app-button-with-gradient>
+    <div class="card-container">
+      @for (card of bannerCards(); track card.id) {
+        <app-card [cardImage]="card.image" [width]="widthCard" [height]="heightCard" [cardName]="card.name"></app-card>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+[
+  {
+    "card": {
+      "id": "xyp-XY99",
+      "localId": "XY99",
+      "name": "Lien Spirituel Ptéra",
+      "image": "https://assets.tcgdex.net/fr/xy/xyp/XY99"
+    },
+    "price": 12.00,
+    "stock": 15,
+    "discount": 0
+  },
+  {
+    "card": {
+      "id": "swsh1-1",
+      "localId": "1",
+      "name": "Celebi V",
+      "image": "https://assets.tcgdex.net/fr/swsh/swsh1/1"
+    },
+    "price": 39.99,
+    "stock": 5,
+    "discount": 25
+  },
+  {
+    "card": {
+      "id": "swsh4.5-SV122",
+      "localId": "SV122",
+      "name": "Éthernatos VMAX",
+      "image": "https://assets.tcgdex.net/fr/swsh/swsh4.5/SV122"
+    },
+    "price": 8.99,
+    "stock": 6,
+    "discount": 0
+  },
+  {
+    "card": {
+      "id": "swsh4.5-SV107",
+      "localId": "SV107",
+      "name": "Dracaufeu VMAX",
+      "image": "https://assets.tcgdex.net/fr/swsh/swsh4.5/SV107"
+    },
+    "price": 59.99,
+    "stock": 3,
+    "discount": 0
+  },
+  {
+    "card": {
+      "id": "swshp-SWSH267",
+      "localId": "SWSH267",
+      "name": "Deoxys VMAX",
+      "image": "https://assets.tcgdex.net/fr/swsh/swshp/SWSH267"
+    },
+    "price": 7.49,
+    "stock": 8,
+    "discount": 0
+  },
+  {
+    "card": {
+      "id": "swsh3-1",
+      "localId": "1",
+      "name": "Papilusion V",
+      "image": "https://assets.tcgdex.net/fr/swsh/swsh3/1"
+    },
+    "price": 9.99,
+    "stock": 4,
+    "discount": 30
+  },
+  {
+    "card": {
+      "id": "swsh9-TG29",
+      "localId": "TG29",
+      "name": "Shifours Poing Final VMAX",
+      "image": "https://assets.tcgdex.net/fr/swsh/swsh9/TG29"
+    },
+    "price": 6.79,
+    "stock": 11,
+    "discount": 0
+  },
+  {
+    "card": {
+      "id": "pl2-1",
+      "localId": "1",
+      "name": "Arcanin Niv. 53",
+      "image": "https://assets.tcgdex.net/fr/pl/pl2/1"
+    },
+    "price": 50.0,
+    "stock": 10,
+    "discount": 0
+  },
+  {
+    "card": {
+      "id": "dc1-1",
+      "localId": "1",
+      "name": "Chamallot de la Team Magma",
+      "image": "https://assets.tcgdex.net/fr/xy/dc1/1"
+    },
+    "price": 30.0,
+    "stock": 10,
+    "discount": 0
+  },
+  {
+    "card": {
+      "id": "sv10-001",
+      "localId": "001",
+      "name": "Scarabrute de Luth",
+      "image": "https://assets.tcgdex.net/fr/sv/sv10/001"
+    },
+    "price": 3.99,
+    "stock": 5,
+    "discount": 10
+  }
+]

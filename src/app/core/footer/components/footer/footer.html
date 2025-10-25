@@ -1,6 +1,6 @@
 <footer class="footer-basic">
   <div class="social">
-    @for (socialNetwork of socialNetworks; track socialNetwork){
+    @for (socialNetwork of socialNetworks; track $index){
       <a href="{{socialNetwork.link}}" target="_blank">
         <i class="{{socialNetwork.icon}}" style="font-size: 2rem"></i>
       </a>
@@ -8,7 +8,7 @@
   </div>
 
   <ul class="list-inline">
-    @for(page of appPages; track page){
+    @for(page of appPages; track $index){
       <li class="list-inline-item">
         <a routerLink="{{page.link}}">{{page.name}}</a>
       </li>

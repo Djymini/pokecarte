@@ -3,7 +3,7 @@
     <h1>{{nameApp}}</h1>
     <nav>
       <ul class="navbar-list">
-        @for (navbarItem of navbarItems; track navbarItem){
+        @for (navbarItem of navbarItems; track $index){
           @if ($index === 1) {
             <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{navbarItem.name}}</a></li>
           }@else {
