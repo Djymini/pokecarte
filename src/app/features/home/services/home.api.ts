@@ -20,8 +20,8 @@ export class HomeApi extends BaseApi{
     return firstValueFrom(this.http.get<SetCard[]>(this.BASE_URL+"sets?logo=notnull:&pagination:itemsPerPage=9"));
   }
 
-  getCard(): Promise<Product[]>{
-    return this.productApi.getProductHype();
+  getProductsHype(): Promise<Product[]>{
+    return this.productApi.getProductsHype();
   }
 
   getPromotion(): Promise<Product[]>{

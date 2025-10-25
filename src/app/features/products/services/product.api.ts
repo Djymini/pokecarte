@@ -10,7 +10,7 @@ export class ProductApi extends BaseApi{
     return this.getLocalData<Product>("product.json");
   }
 
-  getProductHype(){
+  getProductsHype(){
     return this.getLocalData<Product[]>("product-hype.json");
   }
 

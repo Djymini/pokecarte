@@ -2,6 +2,7 @@ import {inject, Injectable} from '@angular/core';
 import {HomeApi} from './home.api';
 import {HomeStore} from './home.store';
 import {SetCardDetail} from '../../products/models/set-detail.model';
+import {Product} from '../../products/models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,16 @@ export class HomeFacade {
       return newSet;
     }else {
       return this.homeStore.newSet();
+    }
+  }
+
+  async getProductsHype(): Promise<Product[] > {
+    if (this.homeStore.productsHype().length === 0) {
+      const products = await this.homeApi.getProductsHype();
+      this.homeStore.addProducts(products);
+      return products;
+    }else {
+      return this.homeStore.productsHype();
     }
   }
 }
