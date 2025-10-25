@@ -16,10 +16,6 @@ export class HomeApi extends BaseApi{
     return firstValueFrom(this.http.get<SetCardDetail>(`https://api.tcgdex.net/v2/fr/sets/sv06`));
   }
 
-  getSetCard(): Promise<SetCard[]> {
-    return firstValueFrom(this.http.get<SetCard[]>(this.BASE_URL+"sets?logo=notnull:&pagination:itemsPerPage=9"));
-  }
-
   getProductsHype(): Promise<Product[]>{
     return this.productApi.getProductsHype();
   }

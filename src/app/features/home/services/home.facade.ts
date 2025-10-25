@@ -30,4 +30,14 @@ export class HomeFacade {
       return this.homeStore.productsHype();
     }
   }
+
+  async getBestPromotions(): Promise<Product[] > {
+    if (this.homeStore.bestPromotion().length === 0) {
+      const promotions = await this.homeApi.getPromotion();
+      this.homeStore.addPromotions(promotions);
+      return promotions;
+    }else {
+      return this.homeStore.bestPromotion();
+    }
+  }
 }
