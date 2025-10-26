@@ -1,12 +1,39 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  LOCALE_ID,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
+import { routes } from './router/app.routes';
+import {providePrimeNG} from 'primeng/config';
+import Aura from '@primeuix/themes/aura';
+import {provideHttpClient} from '@angular/common/http';
+import {registerLocaleData} from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideRouter(routes)
+    provideHttpClient(),
+    provideRouter(routes),
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+        options: {
+          darkModeSelector: false,
+          cssLayer: {
+            order: 'primeng, app'
+          }
+        }
+
+      },
+      ripple: true
+    }),
+    { provide: LOCALE_ID, useValue: 'fr' }
   ]
 };
