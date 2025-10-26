@@ -10,8 +10,7 @@ export class CartFacade {
   cartStore = inject(CartStore);
 
   addToCart(product: Product): void {
-    CartRules.validate(product);
-
+    CartRules.validateAddProduct(product);
     this.cartStore.addProduct(product);
   }
 

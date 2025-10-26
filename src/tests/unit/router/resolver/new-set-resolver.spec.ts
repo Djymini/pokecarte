@@ -1,10 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { ResolveFn } from '@angular/router';
 
-import { newSetResolver } from './new-set-resolver';
+import { newSetResolver } from '@app/router/resolver/home/new-set-resolver';
+import {SetCardDetail} from '@app/features/products/models/set-detail.model';
 
 describe('newSetResolver', () => {
-  const executeResolver: ResolveFn<boolean> = (...resolverParameters) => 
+  const executeResolver: ResolveFn<SetCardDetail> = (...resolverParameters) =>
       TestBed.runInInjectionContext(() => newSetResolver(...resolverParameters));
 
   beforeEach(() => {

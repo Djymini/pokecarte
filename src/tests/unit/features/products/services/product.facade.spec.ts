@@ -1,18 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BaseApi } from '@app/shared/services/base.api';
+import { ProductFacade } from '@app/features/products/services/product.facade';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {provideZonelessChangeDetection} from '@angular/core';
 
-describe('BaseApi', () => {
-  let service: BaseApi;
+describe('ProductFacade', () => {
+  let service: ProductFacade;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [provideZonelessChangeDetection()]
     });
-    service = TestBed.inject(BaseApi);
+    service = TestBed.inject(ProductFacade);
   });
 
   it('should be created', () => {
