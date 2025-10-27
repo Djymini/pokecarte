@@ -1,0 +1,5 @@
+<section class="product-list">
+  @for (product of productList(); track product.card.id) {
+    <app-product-card [product]="product"></app-product-card>
+  }
+</section>

@@ -77,4 +77,8 @@ app-price-indicator {
 
 .price {
   margin-bottom: 10px;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

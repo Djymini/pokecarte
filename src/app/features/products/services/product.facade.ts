@@ -1,8 +1,29 @@
-import { Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
+import {ProductApi} from './product.api';
+import {ProductStore} from './product.store';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductFacade {
-  
+  productApi = inject(ProductApi);
+  productStore = inject(ProductStore);
+
+  async loadProducts(){
+    await  this.productApi.getProduct();
+    const newProductList = await this.productApi.getProduct();
+    this.productStore.updateProducts(newProductList);
+  }
+
+  updateQuery(newQuery:string){
+    this.productStore.updateQuery(newQuery);
+  }
+
+  addSetFilter(newSetFilter:string){
+    this.productStore.addSetFilter(newSetFilter);
+  }
+
+  removeSetFilter(newSetFilter:string){
+    this.productStore.removeSetFilter(newSetFilter);
+  }
 }
