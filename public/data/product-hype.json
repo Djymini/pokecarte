@@ -1,17 +1,6 @@
 [
   {
     "card": {
-      "id": "xyp-XY99",
-      "localId": "XY99",
-      "name": "Lien Spirituel Ptéra",
-      "image": "https://assets.tcgdex.net/fr/xy/xyp/XY99"
-    },
-    "price": 12.00,
-    "stock": 15,
-    "discount": 0
-  },
-  {
-    "card": {
       "id": "swsh1-1",
       "localId": "1",
       "name": "Celebi V",

@@ -7,7 +7,7 @@ import {Product} from '../models/product.model';
 })
 export class ProductApi extends BaseApi{
   getProduct(){
-    return this.getLocalData<Product>("product.json");
+    return this.getLocalData<Product[]>("product.json");
   }
 
   getProductsHype(){

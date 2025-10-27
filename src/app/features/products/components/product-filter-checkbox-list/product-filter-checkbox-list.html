@@ -1,0 +1,17 @@
+<div class="dropdown">
+  <button (click)="toggleList()">
+    {{name()}}
+    @if (listIsVisible()){
+      <i class="pi pi-angle-up"></i>
+    } @else {
+      <i class="pi pi-angle-down"></i>
+    }
+  </button>
+
+  <div class="{{listIsVisible()? 'dropdownContentIsVisible' : 'dropdownContent'}}">
+    <input type="text" placeholder="Search.." id="myInput" (keyup)="filterCheckboxName($event)">
+    @for (nameCheckBox of arrayFilterCheckboxName(); track nameCheckBox){
+      <app-product-filter-checkbox-item [nameCheckbox]="nameCheckBox" [isChecked]="arrayFilter().indexOf(nameCheckBox) != -1" (filterChecked)="onFilterChecked($event)" (filterNotChecked)="onFilterNotChecked($event)"></app-product-filter-checkbox-item>
+    }
+  </div>
+</div>
