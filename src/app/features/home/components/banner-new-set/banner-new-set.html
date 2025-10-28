@@ -4,7 +4,7 @@
     <app-button-with-gradient [nameButton]="nameButton"></app-button-with-gradient>
     <div class="card-container">
       @for (card of bannerCards(); track card.id) {
-        <app-card [cardImage]="card.image" [width]="widthCard" [height]="heightCard" [cardName]="card.name"></app-card>
+        <app-card [cardImage]="card.image" [width]="widthCard" [height]="heightCard" [cardName]="card.name" [id]="card.id"></app-card>
       }
     </div>
   </div>

@@ -18,6 +18,10 @@ export class ProductFacade {
     }
   }
 
+  async loadProductDetail(id:string){
+    return await this.productApi.getProductDetail(id);
+  }
+
   addProduct(product: Product){
     this.productStore.addProduct(product);
   }
