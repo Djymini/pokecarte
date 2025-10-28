@@ -1,0 +1,13 @@
+<div class="cart-item">
+  <img [ngSrc]="product().card.image + '/high.webp'" [alt]="product().card.name" width="50" height="69" class="product-image">
+  <div class="product-details">
+    <p>{{product().card.name}}</p>
+    <app-price-indicator [price]="product().price" [discount]="product().discount"></app-price-indicator>
+    <div class="quantity-selector">
+      <button class="minus-btn" (click)="decreaseQuantity()">−</button>
+      <input type="text" value="{{numberSameProduct()}}" class="quantity-input">
+      <button class="plus-btn" (click)="increaseQuantity()">+</button>
+    </div>
+  </div>
+  <button class="delete-btn" (click)="removeProduct()">🗑</button>
+</div>

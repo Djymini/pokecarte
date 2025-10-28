@@ -12,8 +12,10 @@ export class ProductFacade {
 
   async loadProducts(){
     await  this.productApi.getProduct();
-    const newProductList = await this.productApi.getProduct();
-    this.productStore.updateProducts(newProductList);
+    if(this.productStore.productsFilter().length < 1){
+      const newProductList = await this.productApi.getProduct();
+      this.productStore.updateProducts(newProductList);
+    }
   }
 
   addProduct(product: Product){

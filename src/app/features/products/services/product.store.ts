@@ -12,6 +12,24 @@ export class ProductStore {
   products = computed(() => this.productsSignal());
   query = computed(() => this.querySignal());
   setFilter = computed(() => this.setFilterSignal());
+  productsFilter = computed(() => {
+    let result: Product[] = [];
+
+    if(this.query() !== ""){
+      result = this.products().filter((item: Product) => item.card.name.toLowerCase().includes(this.query().toLowerCase()));
+    }else {
+      result = this.products();
+    }
+
+    if(this.setFilter().length >= 1){
+      result = result.filter((item: Product) => this.setFilter().includes(item.card.id.split("-")[0]))
+    }
+
+    console.log("coucou2")
+    console.log(result);
+
+    return result;
+  });
 
   addProduct(product: Product) {
     console.log(product);

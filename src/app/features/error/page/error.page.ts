@@ -7,9 +7,7 @@ import {ErrorContain} from '../components/error-contain/error-contain';
     ErrorContain
   ],
   template: `
-    <main>
-      <app-error-contain></app-error-contain>
-    </main>
+    <app-error-contain></app-error-contain>
   `,
   styles: ``,
 })

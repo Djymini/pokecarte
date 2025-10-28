@@ -1,7 +1,7 @@
 <div class="container">
   <div class="image-container">
     @if(cardInfo() !== null){
-      <img [ngSrc]="cardInfo() !== null ? cardInfo()?.image+'/low.png' : '/assets/images/image_placeholder.png'" [alt]="cardInfo()?.name" width="167" height="230">
+      <img [ngSrc]="cardInfo() !== null ? cardInfo()?.image+'/high.webp' : '/assets/images/image_placeholder.png'" [alt]="cardInfo()?.name" width="167" height="230">
     }
   </div>
 
@@ -18,7 +18,8 @@
 
       <label for="discount">Promotion</label>
       <input type="text" formControlName="discount">
-      <button class="btn" type="submit" [disabled]="productForm.invalid">Ajouter le produit</button>
+      <p-toast/>
+      <button class="btn" type="submit" [disabled]="productForm.invalid" pButtonLabel="Show">Ajouter le produit</button>
     </form>
   </div>
 </div>

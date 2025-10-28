@@ -1,19 +1,24 @@
 import {Component, computed, inject} from '@angular/core';
 import {FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Product} from '../../../products/models/product.model';
-import {ProductStore} from '../../../products/services/product.store';
 import {ProductFormModel} from '../../models/product-form.model';
 import {CardFacade} from '../../../card/services/card.facade';
 import {CardStore} from '../../../card/services/card.store';
 import {ProductFacade} from '../../../products/services/product.facade';
 import {NgOptimizedImage} from '@angular/common';
+import {Toast} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
+import {ButtonLabel} from 'primeng/button';
 
 @Component({
   selector: 'app-product-form',
   imports: [
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    Toast,
+    ButtonLabel
   ],
+  providers: [MessageService],
   templateUrl: './product-form.html',
   styleUrl: './product-form.scss',
 })
@@ -22,6 +27,7 @@ export class ProductForm {
   private cardStore = inject(CardStore);
   private productFacade = inject(ProductFacade);
   private cardFacade = inject(CardFacade);
+  private messageService = inject(MessageService);
 
   cardInfo = computed(()=> this.cardStore.newCard());
 
@@ -47,6 +53,7 @@ export class ProductForm {
         discount: this.productForm.getRawValue().discount
       }
       this.productFacade.addProduct(newProduct);
+      this.messageService.add({ severity: 'success', summary: 'Info', detail: `la carte ${newProduct.card.name} a été ajouté aux produits`, life: 3000 });
     }
   }
 }

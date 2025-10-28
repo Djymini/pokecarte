@@ -1,0 +1,50 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 50px;
+  height: 69px;
+}
+
+.product-details {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.product-details p {
+  margin: 0;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-input {
+  width: 30px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.minus-btn, .plus-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}

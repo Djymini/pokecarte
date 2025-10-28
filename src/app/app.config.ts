@@ -1,5 +1,5 @@
 import {
-  ApplicationConfig,
+  ApplicationConfig, importProvidersFrom,
   LOCALE_ID,
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection
@@ -13,6 +13,9 @@ import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import {registerLocaleData} from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import {loadingInterceptor} from './core/interceptors/loading.interceptor';
+import {provideAnimations, provideNoopAnimations} from '@angular/platform-browser/animations';
+import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 
 registerLocaleData(localeFr);
 
@@ -35,6 +38,9 @@ export const appConfig: ApplicationConfig = {
       },
       ripple: true
     }),
+    provideAnimations(),
+    importProvidersFrom(ToastModule),
+    MessageService,
     { provide: LOCALE_ID, useValue: 'fr' }
   ]
 };

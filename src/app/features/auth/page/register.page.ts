@@ -7,9 +7,7 @@ import {RegisterForm} from '../components/register-form/register-form';
     RegisterForm
   ],
   template: `
-    <main>
-      <app-register-form></app-register-form>
-    </main>
+    <app-register-form></app-register-form>
   `,
   styles: ``,
 })

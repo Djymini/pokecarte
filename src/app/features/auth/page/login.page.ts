@@ -7,9 +7,7 @@ import {LoginForm} from '../components/login-form/login-form';
     LoginForm
   ],
   template: `
-    <main>
-      <app-login-form></app-login-form>
-    </main>
+    <app-login-form></app-login-form>
   `,
   styles: ``,
 })

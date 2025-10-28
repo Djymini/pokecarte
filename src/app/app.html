@@ -2,9 +2,14 @@
   <app-header></app-header>
 </header>
 
-<app-error-message></app-error-message>
-<app-loader></app-loader>
-<router-outlet></router-outlet>
+<main>
+  <app-error-message></app-error-message>
+  <app-loader></app-loader>
+  @if(isPopupCartIsVisible()){
+    <app-popup-cart></app-popup-cart>
+  }
+  <router-outlet></router-outlet>
+</main>
 
 <footer>
   <app-footer></app-footer>

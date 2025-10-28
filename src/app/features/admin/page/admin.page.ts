@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {ProductForm} from '../components/product-form/product-form';
+import {LoadingService} from '../../../core/services/loading.service';
 
 @Component({
   selector: 'app-admin.page',

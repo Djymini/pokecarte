@@ -1,0 +1,21 @@
+<div class="mini-cart-popup">
+  <div class="cart-header">
+    <h2>Mon Panier</h2>
+    <button class="close-btn" (click)="hidePopupCart()">&times;</button>
+  </div>
+  <div class="separator"></div>
+  <div class="item-container">
+    @for (product of uniqueProducts(); track $index){
+      <app-popup-cart-item [product]="product"></app-popup-cart-item>
+    }
+  </div>
+
+  <div class="total">
+    <span>Total:</span>
+    <span class="total-amount">{{ totalPrice() | currency:'EUR':'symbol':'1.0-2':'fr' }}</span>
+  </div>
+  <div class="cart-footer">
+    <button class="view-bag-btn" (click)="goTotheCart()">Voir le panier</button>
+    <button class="checkout-btn">Payer</button>
+  </div>
+</div>
