@@ -1,6 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {ProductApi} from './product.api';
 import {ProductStore} from './product.store';
+import {Product} from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class ProductFacade {
     await  this.productApi.getProduct();
     const newProductList = await this.productApi.getProduct();
     this.productStore.updateProducts(newProductList);
+  }
+
+  addProduct(product: Product){
+    this.productStore.addProduct(product);
   }
 
   updateQuery(newQuery:string){

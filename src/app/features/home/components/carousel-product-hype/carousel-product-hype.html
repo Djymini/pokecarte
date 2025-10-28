@@ -2,7 +2,7 @@
   <h2>Meilleurs ventes</h2>
   <div class="carousel">
     @if (active > 0) {
-      <button class="nav left" (click)="prev()">
+      <button aria-label="left buton" class="nav left" (click)="prev()">
         <i class="pi pi-chevron-circle-left"></i>
       </button>
     }
@@ -16,7 +16,7 @@
     }
 
     @if (active < count - 1) {
-      <button class="nav right" (click)="next()">
+      <button aria-label="right button" class="nav right" (click)="next()">
         <i class="pi pi-chevron-circle-right"></i>
       </button>
     }

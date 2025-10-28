@@ -19,6 +19,7 @@ import {AuthService} from '../../../../features/auth/services/auth.service';
 export class UserButton implements OnInit {
   items: MenuItem[] = [];
   authService = inject(AuthService);
+  user = this.authService.currentUser();
 
   constructor(
     private messageService: MessageService,
@@ -39,8 +40,19 @@ export class UserButton implements OnInit {
         icon: 'pi pi-sign-out',
         command: () => {
           this.authService.logout();
+          this.router.navigate(['/']);
         },
       },
     ];
+
+    if (this.user?.role === 'ADMIN'){
+      this.items[0] = {
+        label: 'Admin',
+        icon: 'pi pi-user',
+        command: () => {
+          this.router.navigate(['/admin']);
+        },
+      }
+    }
   }
 }

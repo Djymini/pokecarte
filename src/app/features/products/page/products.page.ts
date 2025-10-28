@@ -28,15 +28,22 @@ export default class ProductsPage {
   productList = computed(() => {
     let result: Product[] = [];
 
+    console.log(result);
+
     if(this.productStore.query() !== ""){
       result = this.productStore.products().filter((item: Product) => item.card.name.toLowerCase().includes(this.productStore.query().toLowerCase()));
     }else {
       result = this.productStore.products();
     }
 
+    console.log(result);
+
     if(this.productStore.setFilter().length >= 1){
       result = result.filter((item: Product) => this.productStore.setFilter().includes(item.card.id.split("-")[0]))
     }
+
+    console.log("coucou2")
+    console.log(result);
 
     return result;
   });

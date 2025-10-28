@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {firstValueFrom} from 'rxjs';
 import {AuthResponse} from '../models/auth-response.model';
 import {User} from '../models/user.model';
+import {LoginDto} from '../dto/login-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +12,18 @@ export class AuthService {
   private http = inject(HttpClient);
 
   private currentUserSignal = signal<User | null>(null);
-  private isAuthenticatedSignal = signal<boolean>(true);
+  private isAuthenticatedSignal = signal<boolean>(false);
 
   currentUser = computed(() => this.currentUserSignal());
   isAuthenticated = computed(() => this.isAuthenticatedSignal());
 
-  async login(): Promise<void> {
-    const response = await firstValueFrom(
-      this.http.get<AuthResponse>('https://jsonplaceholder.typicode.com/users/1')
-    );
+  async login(credential: LoginDto): Promise<void> {
+    let response: AuthResponse;
+    if(credential.email === "admin@test.com"){
+      response = await firstValueFrom(this.http.get<AuthResponse>("data/user-admin.json"));
+    }else {
+      response = await firstValueFrom(this.http.get<AuthResponse>("data/user-lambda.json"));
+    }
     this.handleSuccessfulLogin(response);
   }
 
@@ -29,10 +33,9 @@ export class AuthService {
   }
 
   private handleSuccessfulLogin(response: AuthResponse): void {
-    localStorage.setItem('token', response.email);
+    localStorage.setItem('token', response.token);
     this.currentUserSignal.set(response);
     this.isAuthenticatedSignal.set(true);
-    console.log(this.currentUserSignal())
   }
 
   private handleLogout(): void {

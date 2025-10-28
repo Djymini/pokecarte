@@ -11,11 +11,11 @@ import {NgStyle} from '@angular/common';
 })
 export class StockIndicator implements  OnChanges{
   stockValue = input.required<number>();
-  color : string = '#7BB241FF';
+  color : string = '#415D22FF';
 
   updateStockIndicator(): void {
     if (this.stockValue() > 0) {
-      this.color = '#7BB241FF';
+      this.color = '#415D22FF';
     }else {
       this.color = '#F14135FF';
     }

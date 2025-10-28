@@ -3,6 +3,7 @@ import {newSetResolver} from './resolver/home/new-set-resolver';
 import {productHypeResolver} from './resolver/home/product-hype-resolver';
 import {bestPromotionResolver} from './resolver/home/best-promotion-resolver';
 import {productsListResolver} from './resolver/products/products-list-resolver';
+import {adminGuard} from './guards/admin-guard';
 
 export const routes: Routes = [
   {
@@ -16,5 +17,35 @@ export const routes: Routes = [
     title: "Nos produits",
     loadComponent: () => import("../features/products/page/products.page"),
     resolve: {preload: productsListResolver}
-  }
+  },
+  {
+    path: "login",
+    title: "Connexion",
+    loadComponent: () => import("../features/auth/page/login.page"),
+    resolve: {preload: productsListResolver}
+  },
+  {
+    path: "register",
+    title: "S'inscrire",
+    loadComponent: () => import("../features/auth/page/register.page"),
+    resolve: {preload: productsListResolver}
+  },
+  {
+    path: "cart",
+    title: "Mon panier",
+    loadComponent: () => import("../features/cart/page/cart.page"),
+    resolve: {preload: productsListResolver}
+  },
+  {
+    path: "admin",
+    title: "Administration",
+    loadComponent: () => import("../features/admin/page/admin.page"),
+    canActivate: [adminGuard],
+  },
+  {
+    path: 'error',
+    title: "Error",
+    loadComponent: () => import('../features/error/page/error.page')
+  },
+  {path: '**', redirectTo: 'error' }
 ];

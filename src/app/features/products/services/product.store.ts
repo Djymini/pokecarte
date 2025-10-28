@@ -14,7 +14,9 @@ export class ProductStore {
   setFilter = computed(() => this.setFilterSignal());
 
   addProduct(product: Product) {
-    this.productsSignal.update(products => [...products, product])
+    console.log(product);
+    this.productsSignal.update(products => [...products, product]);
+    console.log(this.productsSignal()[this.productsSignal().length-1]);
   }
 
   removeUser(id: string): void {

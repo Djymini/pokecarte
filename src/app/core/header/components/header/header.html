@@ -4,11 +4,7 @@
     <nav>
       <ul class="navbar-list">
         @for (navbarItem of navbarItems; track $index){
-          @if ($index === 1) {
-            <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{navbarItem.name}}</a></li>
-          }@else {
-            <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active">{{navbarItem.name}}</a></li>
-          }
+          <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active">{{navbarItem.name}}</a></li>
         }
       </ul>
     </nav>
