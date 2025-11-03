@@ -5,8 +5,5 @@ import {BrowserTestingModule, platformBrowserTesting} from '@angular/platform-br
 getTestBed().initTestEnvironment(
   BrowserTestingModule,
   platformBrowserTesting(),
-  {
-    teardown: { destroyAfterEach: true },
-    providers: [provideZonelessTestEnvironment()]
-  }
+  { teardown: { destroyAfterEach: true } }
 );
