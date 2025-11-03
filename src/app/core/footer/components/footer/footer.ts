@@ -15,8 +15,8 @@ export class Footer {
   nameApp:string = NAME_APP;
 
   socialNetworks:FooterListLinkItem[] = [
-    {icon: 'pi pi-instagram', link: 'https://www.instagram.com/'},
-    {icon: 'pi pi-facebook', link: 'https://www.facebook.com/'},
+    {icon: 'pi pi-instagram', link: 'https://www.instagram.com/', name: 'Instagram link'},
+    {icon: 'pi pi-facebook', link: 'https://www.facebook.com/', name: 'Facebook link'},
   ];
 
   appPages:FooterListLinkItem[] = [

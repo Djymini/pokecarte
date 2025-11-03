@@ -28,7 +28,6 @@ export class Header {
     {name: "Accueil", link: "/"},
     {name: "Nos produits", link: "/products"},
     {name: "A propos", link: "/about"},
-    {name: "Support", link: "/support"},
-    {name: "Connexion", link: "/login"},
+    {name: "Support", link: "/support"}
   ];
 }

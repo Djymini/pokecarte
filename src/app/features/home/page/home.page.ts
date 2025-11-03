@@ -14,11 +14,9 @@ import {PresentationBestPromotion} from '../components/presentation-best-promoti
     PresentationBestPromotion
   ],
   template: `
-    <main>
-      <app-banner-new-set [newSet]="newSet"></app-banner-new-set>
-      <app-carousel-product-hype [productHype]="productsHype"></app-carousel-product-hype>
-      <app-presentation-best-promotion [bestPromotion]="bestPromotion"></app-presentation-best-promotion>
-    </main>
+    <app-banner-new-set [newSet]="newSet"></app-banner-new-set>
+    <app-carousel-product-hype [productHype]="productsHype"></app-carousel-product-hype>
+    <app-presentation-best-promotion [bestPromotion]="bestPromotion"></app-presentation-best-promotion>
   `,
   styles: ``,
 })

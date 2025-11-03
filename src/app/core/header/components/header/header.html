@@ -1,14 +1,13 @@
-<header>
+<div class="header">
   <div class="header-start">
     <h1>{{nameApp}}</h1>
     <nav>
       <ul class="navbar-list">
         @for (navbarItem of navbarItems; track $index){
-          @if ($index === 1) {
-            <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{navbarItem.name}}</a></li>
-          }@else {
-            <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active">{{navbarItem.name}}</a></li>
-          }
+          <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active">{{navbarItem.name}}</a></li>
+        }
+        @if (!isAuthenticated()) {
+          <li class="navbar-item"><a routerLink="/login" routerLinkActive="active">Connexion</a></li>
         }
       </ul>
     </nav>
@@ -21,4 +20,4 @@
       <app-user-button></app-user-button>
     }
   </div>
-</header>
+</div>

@@ -11,13 +11,13 @@ import {ProductFilter} from '../components/product-filter/product-filter';
     ProductFilter
   ],
   template: `
-    <main>
+    <section>
       <app-product-filter></app-product-filter>
-      <app-product-list [productList]="productList()"></app-product-list>
-    </main>
+      <app-product-list></app-product-list>
+    </section>
   `,
   styles: `
-    main{
+    section{
       padding: 16px;
       display: flex;
     }`,
@@ -25,19 +25,4 @@ import {ProductFilter} from '../components/product-filter/product-filter';
 export default class ProductsPage {
   productStore = inject(ProductStore);
 
-  productList = computed(() => {
-    let result: Product[] = [];
-
-    if(this.productStore.query() !== ""){
-      result = this.productStore.products().filter((item: Product) => item.card.name.toLowerCase().includes(this.productStore.query().toLowerCase()));
-    }else {
-      result = this.productStore.products();
-    }
-
-    if(this.productStore.setFilter().length >= 1){
-      result = result.filter((item: Product) => this.productStore.setFilter().includes(item.card.id.split("-")[0]))
-    }
-
-    return result;
-  });
 }

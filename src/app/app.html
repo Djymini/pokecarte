@@ -1,4 +1,16 @@
-<app-header></app-header>
-<app-error-message></app-error-message>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<header>
+  <app-header></app-header>
+</header>
+
+<main>
+  <app-error-message></app-error-message>
+  <app-loader></app-loader>
+  @if(isPopupCartIsVisible()){
+    <app-popup-cart></app-popup-cart>
+  }
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <app-footer></app-footer>
+</footer>

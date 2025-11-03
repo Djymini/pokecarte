@@ -21,4 +21,12 @@ export class CartFacade {
   removeAllProduct(product: Product): void {
     this.cartStore.removeAllProduct(product);
   }
+
+  showPopup(){
+    this.cartStore.showPopup();
+  }
+
+  hidePopup(){
+    this.cartStore.hidePopup();
+  }
 }

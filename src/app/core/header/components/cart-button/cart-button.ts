@@ -18,5 +18,8 @@ export class CartButton {
   cartStore = inject(CartStore);
   productNumber = computed(() => this.cartStore.cart().length);
   disableBadge = computed(() => this.productNumber() < 1)
-  /*private cartFacade = inject(CartFacade);*/
+
+  hidePopupCart(){
+    this.cartStore.hidePopup();
+  }
 }

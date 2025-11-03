@@ -1,5 +1,5 @@
 <section class="product-list">
-  @for (product of productList(); track product.card.id) {
-    <app-product-card [product]="product"></app-product-card>
+  @for (product of productList(); track $index) {
+    <app-product-card [product]="product" (productAdded)="onProductAddedToCart($event)"></app-product-card>
   }
 </section>

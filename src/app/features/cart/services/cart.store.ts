@@ -6,8 +6,10 @@ import {Product} from '../../products/models/product.model';
 })
 export class CartStore {
   private cartSignal = signal<Product[]>([]);
+  private isPopupVisibleSignal = signal<boolean>(false);
 
   cart = computed(() => this.cartSignal());
+  isPopupVisible = computed(() => this.isPopupVisibleSignal());
 
   addProduct(product: Product): void {
     this.cartSignal.update(products => [...products, product]);
@@ -22,6 +24,14 @@ export class CartStore {
     if (indexForRemove !== -1) {
       this.cartSignal.update(products => products.filter((element, index) => index !== indexForRemove));
     }
+  }
+
+  showPopup(): void {
+    this.isPopupVisibleSignal.set(true);
+  }
+
+  hidePopup(): void {
+    this.isPopupVisibleSignal.set(false);
   }
 
   clearCard(): void {
