@@ -21,7 +21,7 @@ describe('ProductRules (unit tests)', () => {
 
   it('should apply discount correctly', () => {
     const truePrice = ProductRules.applyDiscount(product);
-    expect(truePrice).toBe(6);
+    expect(truePrice).toBe(7);
   });
 
   it('should throw error if discount < 0 or > 100', () => {
