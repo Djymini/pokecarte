@@ -11,7 +11,6 @@ export class ProductFacade {
   productStore = inject(ProductStore);
 
   async loadProducts(){
-    await  this.productApi.getProduct();
     if(this.productStore.productsFilter().length < 1){
       const newProductList = await this.productApi.getProduct();
       this.productStore.updateProducts(newProductList);
