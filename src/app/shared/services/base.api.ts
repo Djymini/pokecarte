@@ -2,6 +2,7 @@ import {inject, Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {ErrorService} from './error.service';
 import {firstValueFrom} from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {firstValueFrom} from 'rxjs';
 export class BaseApi {
   protected http = inject(HttpClient);
   protected errorService = inject(ErrorService);
-  protected readonly BASE_URL = 'https://api.tcgdex.net/v2/fr/';
+  protected readonly BASE_URL = environment.apiUrl;
   protected readonly baseJson:string = 'data/';
 
   protected getHeaders(): HttpHeaders {
