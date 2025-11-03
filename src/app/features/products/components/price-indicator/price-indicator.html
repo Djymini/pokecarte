@@ -1,0 +1,4 @@
+<span class="price-container">
+  <span [ngStyle]="{fontSize : fontSize, color : color, textDecoration : textDecoration}">{{ price() | currency:'EUR':'symbol':'1.0-2':'fr' }}</span>
+  <span [ngStyle]="{display : display}">{{ trueprice() | currency:'EUR':'symbol':'1.0-2':'fr' }}</span>
+</span>

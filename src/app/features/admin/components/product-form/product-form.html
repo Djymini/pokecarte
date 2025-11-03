@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="image-container">
+    @if(cardInfo() !== null){
+      <img [ngSrc]="cardInfo() !== null ? cardInfo()?.image+'/high.webp' : '/assets/images/image_placeholder.png'" [alt]="cardInfo()?.name" width="167" height="230">
+    }
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="productForm" (submit)="onSubmit()">
+      <label for="name">Nom de la carte</label>
+      <input type="text" formControlName="name" (keyup)="onKeyUp($event)">
+
+      <label for="price">Prix</label>
+      <input type="text" formControlName="price">
+
+      <label for="stock">Stock</label>
+      <input type="text" formControlName="stock">
+
+      <label for="discount">Promotion</label>
+      <input type="text" formControlName="discount">
+      <p-toast/>
+      <button class="btn" type="submit" [disabled]="productForm.invalid" pButtonLabel="Show">Ajouter le produit</button>
+    </form>
+  </div>
+</div>

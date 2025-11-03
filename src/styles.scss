@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+:root {
+  --text: #050315;
+  --background: #fbfbfe;
+  --primary: #2f27ce;
+  --secondary: #dedcff;
+  --accent: #433bff;
+  --accent-focus: #3630cf;
+
+  --text-disable: #4c4c53;
+  --background-second: #dcdcdf;
+
+  --linearPrimarySecondary: linear-gradient(#2f27ce, #dedcff);
+  --linearPrimaryAccent: linear-gradient(#2f27ce, #433bff);
+  --linearSecondaryAccent: linear-gradient(#dedcff, #433bff);
+  --radialPrimarySecondary: radial-gradient(#2f27ce, #dedcff);
+  --radialPrimaryAccent: radial-gradient(#2f27ce, #433bff);
+  --radialSecondaryAccent: radial-gradient(#dedcff, #433bff);
+}
+
+@font-face {
+  font-family: 'Jersey25';
+  src: url('assets/fonts/jersey/Jersey25-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/roboto/Roboto-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/roboto/Roboto-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Jersey25', sans-serif;
+}
+
+
+
+@layer app {
+  .p-badge-info,
+  .p-tag-info {
+    background-color: #433BFFFF !important;
+    color: #433BFFFF !important;
+  }
+
+  .p-overlaybadge{
+    margin: 0 10px;
+  }
+
+  .p-speeddial {
+    margin-top: 1.5px;
+  }
+
+  .p-carousel-indicator-active .p-carousel-indicator-button {
+    background-color: var(--accent) !important;
+  }
+
+  .p-carousel-indicator-button:hover {
+    background: var(--secondary) !important;
+  }
+
+  .p-speeddial-list{
+    position: absolute;
+    top: 52px;
+    right: 2px;
+  }
+
+  .user-button.pi-button {
+    margin: auto;
+  }
+}

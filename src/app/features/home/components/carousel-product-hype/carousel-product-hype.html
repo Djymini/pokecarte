@@ -1,0 +1,24 @@
+<section>
+  <h2>Meilleurs ventes</h2>
+  <div class="carousel">
+    @if (active > 0) {
+      <button aria-label="left buton" class="nav left" (click)="prev()">
+        <i class="pi pi-chevron-circle-left"></i>
+      </button>
+    }
+
+    @for (product of productHype(); track $index) {
+      <div class="card-container" [ngStyle]="getStyle($index)">
+        @if ($index === active || Math.abs(active - $index) <= maxCardVisibility) {
+          <app-card [cardImage]="product.card.image" [width]="widthCard" [height]="heightCard" [cardName]="product.card.name" [id]="product.card.id"></app-card>
+        }
+      </div>
+    }
+
+    @if (active < count - 1) {
+      <button aria-label="right button" class="nav right" (click)="next()">
+        <i class="pi pi-chevron-circle-right"></i>
+      </button>
+    }
+  </div>
+</section>

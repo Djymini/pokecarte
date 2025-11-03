@@ -1,0 +1,3 @@
+<p-overlay-badge value="{{productNumber()}}" severity="danger" [badgeDisabled]="disableBadge()" class="cart-button">
+  <p-button ariaLabel="cart button" icon="pi pi-shopping-cart" [rounded]="true" [outlined]="true" severity="info" routerLink="/cart" (click)="hidePopupCart()"/>
+</p-overlay-badge>
