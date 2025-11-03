@@ -92,7 +92,6 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "main": "src/tests/unit/test.spec.ts",
             "tsConfig": "src/tests/config/tsconfig.unit.spec.json",
             "karmaConfig": "src/tests/config/karma.unit.conf.js",
             "exclude": ["src/tests/integration/**/*.spec.ts"],

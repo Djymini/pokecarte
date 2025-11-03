@@ -1,3 +1,5 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 
 import { CartFacade } from '@app/features/cart/services/cart.facade';
@@ -8,7 +10,10 @@ describe('CartFacade', () => {
   let product: Product;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [provideZonelessChangeDetection()]
+    });
     service = TestBed.inject(CartFacade);
     product = {
       card: {
