@@ -1,0 +1,15 @@
+<p-speeddial [model]="items" direction="down" [transitionDelay]="80" class="user-button">
+  <ng-template pTemplate="button" let-toggleCallback="toggleCallback">
+    <p-button ariaLabel="user button" class="user-button" outlined styleClass="border" [rounded]="true" (click)="toggleCallback($event)" severity="info">
+      @if (user){
+        {{user.username.at(0)?.toUpperCase()}}
+      }
+    </p-button>
+  </ng-template>
+  <ng-template pTemplate="item" let-item let-toggleCallback="toggleCallback" >
+    <div class="user-button-item" (click)="toggleCallback($event, item)">
+      <i [class]="item.icon"></i>
+      <span>{{ item.label }}</span>
+    </div>
+  </ng-template>
+</p-speeddial>

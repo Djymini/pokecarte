@@ -1,0 +1,12 @@
+<section>
+  <h2>Promotions du moment</h2>
+  <div class="product-container">
+    @for (promotion of bestPromotion(); track promotion.card.id){
+      @if ($index > 0 && $index < 3) {
+        <app-product-card [product]="promotion"></app-product-card>
+      } @else if ($index === 0){
+        <app-main-presentation-promotion [product]="promotion"></app-main-presentation-promotion>
+      }
+    }
+  </div>
+</section>

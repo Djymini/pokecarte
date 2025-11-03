@@ -1,0 +1,21 @@
+<div class="cart-summary">
+  <div class="summary-box">
+    <h3>Récapitulatif ({{ products().length }} produits)</h3>
+    <div class="total">
+      Prix total :
+      <span class="price-red">{{ totalPrice() | currency:'EUR':'symbol':'1.0-2':'fr' }}</span>
+    </div>
+    <button class="btn-primary">Choisir ma livraison</button>
+  </div>
+
+  <div class="volonte-box">
+    <h4>Pokecard vous facilite les choses</h4>
+    <ul>
+      <li>✓ Livraison en express gratuite et illimitée</li>
+      <li>✓ Des euros crédités sur votre cagnotte</li>
+      <li>✓ Des remises exclusives</li>
+    </ul>
+    <p><a href="#">6 jours d’essai gratuit</a><br>puis 29 € par an</p>
+    <button class="btn-volonte">Essayer</button>
+  </div>
+</div>

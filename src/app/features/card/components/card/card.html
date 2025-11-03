@@ -1,0 +1,9 @@
+<div class="container noselect" [ngStyle]="{width: width() + 'px', height: height() + 'px'}" >
+  <div class="canvas">
+    @for (tracker of trackers; track $index) {
+      <div class="tracker tr-{{ $index + 1 }}" (click)="goToDetail()"></div>
+    }
+
+    <img id="card" [ngSrc]="cardImage()+'/high.webp'" width="{{width()}}" height="{{height()}}" [alt]="cardName()">
+  </div>
+</div>
