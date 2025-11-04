@@ -19,7 +19,7 @@ export class BannerNewSet {
   newSet = input.required<SetCardDetail>();
   bannerCards = computed(() => this.newSet()?.cards.slice(0, 5));
 
-  nameButton: string = "Découvrir le nouveau set coucou"
+  nameButton: string = "Découvrir le nouveau set coucou 2"
   widthCard: string = "195";
   heightCard: string = "268";
 }
