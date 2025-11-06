@@ -30,10 +30,6 @@
 }
 
 @media screen and (max-width: 1020px) {
-  .banner {
-    padding: 8px;
-  }
-
   .card-container app-card:nth-child(4) {
     display: none;
   }
@@ -46,5 +42,10 @@
 @media screen and (max-width: 900px) {
   .card-container{
     display: none;
+  }
+
+  img{
+    width: 53.7vw !important;
+    height: auto !important;
   }
 }
