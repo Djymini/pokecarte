@@ -1,0 +1,12 @@
+<div class="card flex justify-center">
+    <p-drawer [(visible)]="visible" [closable]="false">
+        <ng-template #header>
+            <h3>Filtres</h3>
+        </ng-template>
+        <app-product-filter-search></app-product-filter-search>
+        <app-product-filter-checkbox></app-product-filter-checkbox>
+
+        <button (click)="clearFilter()">Réinitialiser le filtre</button>
+    </p-drawer>
+    <button pButton (click)="visible = true">Filtres</button>
+</div>

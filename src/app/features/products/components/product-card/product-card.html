@@ -2,18 +2,22 @@
   @if (product().discount > 0) {
     <p class="promotion-indicator">-{{product().discount}}%</p>
   }
-  <div class="card-container">
+  <div class="product-card-container">
     <app-card [cardImage]="product().card.image" [width]="cardWidth" [height]="cardHeight" [cardName]="product().card.name" [id]="product().card.id"></app-card>
   </div>
 
-  <div class="title-container">
-    <h3>{{ product().card.name }}</h3>
-    <app-stock-indicator [stockValue]="product().stock"></app-stock-indicator>
+  <div class="info-container">
+    <div class="title-container">
+      <h3>{{ product().card.name }}</h3>
+      <app-stock-indicator [stockValue]="product().stock"></app-stock-indicator>
+    </div>
+
+    <div class="price">
+      <app-price-indicator [price]="product().price" [discount]="product().discount"></app-price-indicator>
+    </div>
   </div>
 
-  <div class="price">
-    <app-price-indicator [price]="product().price" [discount]="product().discount"></app-price-indicator>
-  </div>
+
 
   <button class="add-cart-button" (click)="addToCart()">
     Ajouter au panier
