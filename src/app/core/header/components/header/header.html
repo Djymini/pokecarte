@@ -13,6 +13,8 @@
             @if (!isAuthenticated() && $index === 4) {
               <li class="navbar-item"><a routerLink="/login" routerLinkActive="active">Connexion</a></li>
             }
+          }@else if($index === 0){
+            <li class="navbar-item"><a [routerLink]="item.url" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{item.label}}</a></li>
           }@else {
             <li class="navbar-item"><a [routerLink]="item.url" routerLinkActive="active">{{item.label}}</a></li>
           }

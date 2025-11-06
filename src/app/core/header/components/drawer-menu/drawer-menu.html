@@ -3,9 +3,9 @@
     <ng-template #headless>
         <div class="flex flex-col h-full">
             <div class="flex items-center justify-between px-6 pt-4 shrink-0">
-                <h1>Pokecarte</h1>
+                <span class="drawer-title">Pokecarte</span>
                 <span>
-                    <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true" outlined="true" styleClass="h-8 w-8"></p-button>
+                    <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true" outlined="true" styleClass="h-8 w-8" severity="info"></p-button>
                 </span>
             </div>
             <div class="overflow-y-auto">
@@ -32,5 +32,5 @@
         </div>
     </ng-template>
 </p-drawer>
-<p-button (click)="visible = true" icon="pi pi-bars" />
+<p-button (click)="visible = true" icon="pi pi-bars" variant="text"severity="info"/>
 </div>
