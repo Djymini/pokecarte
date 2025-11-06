@@ -56,3 +56,9 @@ button:hover span {
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 900px) {
+  button span {
+    font-size: 16px;
+  }
+}

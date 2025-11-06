@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
 import {SetCardDetail} from '../../../products/models/set-detail.model';
 import {NgOptimizedImage} from '@angular/common';
 import {ButtonWithGradient} from '../../../../shared/components/button-with-gradient/button-with-gradient';
