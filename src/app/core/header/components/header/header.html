@@ -1,13 +1,21 @@
 <div class="header">
   <div class="header-start">
+    <div class="burger-menu flex justify-center">
+      <p-menu #menu [model]="items" [popup]="true" />
+      <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"/>
+    </div>
+
     <h1>{{nameApp}}</h1>
     <nav>
       <ul class="navbar-list">
-        @for (navbarItem of navbarItems; track $index){
-          <li class="navbar-item"><a [routerLink]="navbarItem.link" routerLinkActive="active">{{navbarItem.name}}</a></li>
-        }
-        @if (!isAuthenticated()) {
-          <li class="navbar-item"><a routerLink="/login" routerLinkActive="active">Connexion</a></li>
+        @for (item of items; track $index){
+          @if($index === 4){
+            @if (!isAuthenticated() && $index === 4) {
+              <li class="navbar-item"><a routerLink="/login" routerLinkActive="active">Connexion</a></li>
+            }
+          }@else {
+            <li class="navbar-item"><a [routerLink]="item.url" routerLinkActive="active">{{item.label}}</a></li>
+          }
         }
       </ul>
     </nav>
@@ -19,5 +27,23 @@
     @if(isAuthenticated()){
       <app-user-button></app-user-button>
     }
+  </div>
+
+  <div class="header-start-2">
+    <div class="start">
+      <app-drawer-menu [items]="items" [isAuthenticated]="isAuthenticated()"></app-drawer-menu>
+      <h1>{{nameApp}}</h1>
+    </div>
+
+    <div class="end">
+      <app-cart-button></app-cart-button>
+      @if(isAuthenticated()){
+        <app-user-button></app-user-button>
+      }
+    </div>
+  </div>
+
+  <div class="header-end-2">
+    <app-header-searchbar></app-header-searchbar>
   </div>
 </div>
