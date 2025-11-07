@@ -12,6 +12,10 @@ section {
   overflow: hidden;
 }
 
+.pi {
+    color: black;
+  }
+
 h2 {
   margin: 0 auto 32px auto;
   text-align: center;
@@ -105,26 +109,40 @@ h2 {
 
 @media screen and (max-width: 900px) {
   .card-container ::ng-deep app-card .container {
-    transform: scale(0.8);
+    width : 312px;
+    height: 409px;
   }
 
   .card-container ::ng-deep app-card img {
-    transform: scale(0.8);
-  }
-
-  .nav {
-    &.left {
-      transform: translateX(-10%) translatey(-50%);
-    }
-
-    &.right {
-      right: 0;
-      transform: translateX(10%) translatey(-50%);
-    }
+    width : 312px;
+    height: 409px;
   }
 
   .carousel{
-    transform: scale(0.9);
+    width : 312px;
+    height: 409px;
+  }
+
+}
+
+@media screen and (max-width: 470px) {
+  .card-container ::ng-deep app-card .container {
+    width : 187px;
+    height: 245px;
+  }
+
+  .pi {
+    font-size: 40px;
+  }
+
+  .card-container ::ng-deep app-card img {
+    width : 187px;
+    height: 245px;
+  }
+
+  .carousel{
+    width : 187px;
+    height: 245px;
   }
 
 }
