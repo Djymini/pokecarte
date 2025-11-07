@@ -48,7 +48,7 @@
 .separator {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: #433BFFFF;
   margin: 10px 0;
 }
 
@@ -74,10 +74,17 @@
 
 .view-bag-btn {
   background-color: white;
-  border: 1px solid #000;
+  border: 1px solid #433BFFFF;
 }
 
 .checkout-btn {
-  background-color: black;
+  background-color: #433BFFFF;
   color: white;
+}
+
+@media screen and (max-width: 410px) {
+  .mini-cart-popup {
+    width: 290px;
+  }
+
 }

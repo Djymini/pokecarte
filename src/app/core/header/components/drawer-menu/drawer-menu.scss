@@ -1,0 +1,44 @@
+.drawer-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-right: 16px;
+}
+
+.p-button{
+  color: #433BFFFF;
+  border-color: #433BFFFF !important;
+}
+
+.items-center{
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.list-none {
+  list-style: none;
+  color: var(--text-disable);
+}
+
+.list-none {
+  li{
+    margin-bottom: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    padding: 4px 12px;
+    border-radius: 80px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  a:hover {
+    color: var(--text);
+  }
+}

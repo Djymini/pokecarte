@@ -76,6 +76,15 @@ h1, h2, h3, h4, h5, h6 {
     color: #433BFFFF !important;
   }
 
+  .pi {
+    font-size: var(--p-icon-size);
+    color: #433BFFFF;
+  }
+
+  .p-button{
+    background-color: #433BFFFF;
+  }
+
   .p-overlaybadge{
     margin: 0 10px;
   }
