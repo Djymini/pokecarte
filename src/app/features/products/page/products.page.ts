@@ -43,6 +43,12 @@ import { ProductFilterDrawer } from "../components/product-filter-drawer/product
         display: none;
       }
     }
+
+    @media screen and (max-width: 450px) {
+      section{
+        padding: 16px 2px;
+      }
+    }
     `,
 })
 export default class ProductsPage {

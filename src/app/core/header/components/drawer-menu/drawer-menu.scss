@@ -4,6 +4,17 @@
   margin-right: 16px;
 }
 
+.p-button{
+  color: #433BFFFF;
+  border-color: #433BFFFF !important;
+}
+
+.items-center{
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
 .list-none {
   list-style: none;
   color: var(--text-disable);

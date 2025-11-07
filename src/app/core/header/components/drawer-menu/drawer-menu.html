@@ -4,8 +4,8 @@
         <div class="flex flex-col h-full">
             <div class="flex items-center justify-between px-6 pt-4 shrink-0">
                 <span class="drawer-title">Pokecarte</span>
-                <span>
-                    <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true" outlined="true" styleClass="h-8 w-8" severity="info"></p-button>
+                <span class="btn-close">
+                    <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true" outlined="true" styleClass="h-8 w-8"></p-button>
                 </span>
             </div>
             <div class="overflow-y-auto">
@@ -14,14 +14,14 @@
                     @if($index === 4){
                       @if (!isAuthenticated() && $index === 4) {
                         <li>
-                            <a pRipple class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple" routerLink="/login">
+                            <a pRipple class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple" routerLink="/login" (click)="closeCallback($event)">
                                 <span class="font-medium">Connexion</span>
                             </a>
                         </li>
                       }
                     }@else {
                       <li>
-                          <a pRipple class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple" [routerLink]="item.url">
+                          <a pRipple class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple" [routerLink]="item.url" (click)="closeCallback($event)">
                               <span class="font-medium">{{item.label}}</span>
                           </a>
                       </li>
