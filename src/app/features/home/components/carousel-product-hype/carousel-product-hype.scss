@@ -103,3 +103,29 @@ h2 {
 }
 
 
+@media screen and (max-width: 900px) {
+  .card-container ::ng-deep app-card .container {
+    transform: scale(0.8);
+  }
+
+  .card-container ::ng-deep app-card img {
+    transform: scale(0.8);
+  }
+
+  .nav {
+    &.left {
+      transform: translateX(-10%) translatey(-50%);
+    }
+
+    &.right {
+      right: 0;
+      transform: translateX(10%) translatey(-50%);
+    }
+  }
+
+  .carousel{
+    transform: scale(0.9);
+  }
+
+}
+

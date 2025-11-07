@@ -5,6 +5,7 @@
       @if ($index > 0 && $index < 3) {
         <app-product-card [product]="promotion"></app-product-card>
       } @else if ($index === 0){
+        <app-product-card [product]="promotion"></app-product-card>
         <app-main-presentation-promotion [product]="promotion"></app-main-presentation-promotion>
       }
     }
