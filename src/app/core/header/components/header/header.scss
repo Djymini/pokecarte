@@ -1,134 +1,29 @@
-.header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 0;
-  z-index: 99;
-  padding: 9px 18px;
-  background-color: var(--background);
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
+:host {
+  --p-megamenu-base-item-border-radius: 100px;
+  --p-megamenu-item-focus-background: var(--secondary);
+  --p-megamenu-mobile-button-color: var(--accent);
+  --p-megamenu-mobile-button-hover-color: var(--accent);
 }
 
-.burger-menu{
-  display: none;
+.header{
+  box-shadow: 0 3px 15px gray;
+  position: relative;
 }
 
-h1 {
-  margin: 0 16px 0 0;
-  font-size: 48px;
-}
-
-.header-start {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-list {
-  margin: 0 16px 0 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  color: var(--text-disable);
-}
-
-.navbar-item {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0 10px 0 0;
-  font-size: 20px;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    padding: 4px 12px;
-    border-radius: 80px;
-    font-weight: bold;
-  }
-
-  a:visited {
-    color: inherit;
-  }
-
-  a:hover {
-    color: var(--text);
-  }
+a {
+  border-radius: 100px;
 }
 
 .active {
-  color: var(--text) !important;
   background-color: var(--secondary);
 }
 
-.header-end{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.header-start-2{
-  display: none;
-  width: 100%;
-
+@media screen and (min-width: 960px) {
   h1{
-    font-size: 24px;
+    font-size: 48px;
+    margin-right: 16px;
   }
 }
 
-.header-end-2{
-  display: none;
-  width: 100%;
-}
 
-.start{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 8px;
-}
-
-.end{
-  display: flex;
-  justify-content: end;
-  width: 100%;
-}
-
-@media screen and (max-width: 1260px) {
-    h1 {
-      margin: 0 1vw 0 0;
-      font-size: 3.8vw;
-    }
-
-  .navbar-list{
-    margin: 0 1vw 0 0;
-  }
-
-  .navbar-item {
-    margin: 0 1vw 0 0;
-    font-size: 1.5vw;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .header{
-    display: block;
-  }
-  .header-start{
-    display: none;
-  }
-
-  .header-end{
-    display: none;
-  }
-
-  .header-start-2{
-    display: flex;
-    margin-bottom: 8px;
-  }
-
-  .header-end-2{
-    display: block;
-  }
-}
 

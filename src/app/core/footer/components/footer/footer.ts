@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NAME_APP} from '../../../../shared/utilis/constants';
+import {APP_NAME} from '../../../../shared/utilis/constants';
 import {FooterListLinkItem} from '../../models/list-link.model';
 import {RouterLink} from '@angular/router';
 
@@ -12,7 +12,7 @@ import {RouterLink} from '@angular/router';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  nameApp:string = NAME_APP;
+  nameApp:string = APP_NAME;
 
   socialNetworks:FooterListLinkItem[] = [
     {icon: 'pi pi-instagram', link: 'https://www.instagram.com/', name: 'Instagram link'},

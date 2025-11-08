@@ -1,51 +1,26 @@
 <div class="header">
-  <div class="header-start">
-    <div class="burger-menu flex justify-center">
-      <p-menu #menu [model]="items" [popup]="true" />
-      <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"/>
-    </div>
+  <p-megamenu [model]="items()" [style]="{ 'border-radius': '0', display: 'flex' }" class="p-4 bg-surface-0 dark:bg-surface-900">
+    <ng-template #start>
+      <h1 class="text-3xl font-bold">{{nameApp}}</h1>
+    </ng-template>
 
-    <h1>{{nameApp}}</h1>
-    <nav>
-      <ul class="navbar-list">
-        @for (item of items; track $index){
-          @if($index === 4){
-            @if (!isAuthenticated() && $index === 4) {
-              <li class="navbar-item"><a routerLink="/login" routerLinkActive="active">Connexion</a></li>
-            }
-          }@else if($index === 0){
-            <li class="navbar-item"><a [routerLink]="item.url" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{item.label}}</a></li>
-          }@else {
-            <li class="navbar-item"><a [routerLink]="item.url" routerLinkActive="active">{{item.label}}</a></li>
-          }
-        }
-      </ul>
-    </nav>
-  </div>
+    <ng-template #item let-item>
+      @if(item.label === items()[0].label){
+        <a pRipple class="flex items-center cursor-pointer px-4 py-2 overflow-hidden relative font-semibold text-lg uppercase" [routerLink]="item.url" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <span>{{ item.label }}</span>
+        </a>
+      }@else {
+        <a pRipple class="flex items-center cursor-pointer px-4 py-2 overflow-hidden relative font-semibold text-lg uppercase" [routerLink]="item.url" routerLinkActive="active">
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </ng-template>
 
-  <div class="header-end">
-    <app-header-searchbar></app-header-searchbar>
-    <app-cart-button></app-cart-button>
-    @if(isAuthenticated()){
-      <app-user-button></app-user-button>
-    }
-  </div>
-
-  <div class="header-start-2">
-    <div class="start">
-      <app-drawer-menu [items]="items" [isAuthenticated]="isAuthenticated()"></app-drawer-menu>
-      <h1>{{nameApp}}</h1>
-    </div>
-
-    <div class="end">
-      <app-cart-button></app-cart-button>
+    <ng-template #end>
       @if(isAuthenticated()){
         <app-user-button></app-user-button>
       }
-    </div>
-  </div>
-
-  <div class="header-end-2">
-    <app-header-searchbar></app-header-searchbar>
-  </div>
+      <app-cart-button></app-cart-button>
+    </ng-template>
+  </p-megamenu>
 </div>

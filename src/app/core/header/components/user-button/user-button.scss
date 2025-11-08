@@ -1,40 +1,23 @@
-.user-button-main {
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+:host {
+  --p-button-outlined-info-color: var(--accent);
+  --p-button-outlined-info-color  : var(--accent);
+  --p-button-outlined-info-border-color   : var(--accent);
 }
 
-.user-button-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  width: 80px;
-  height: 80px;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  background-color: #f9f9f9;
-  transition: background-color 0.3s, transform 0.2s;
+:host ::ng-deep .p-speeddial {
+  margin-right: 16px;
 }
 
-.user-button-item:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-2px);
+:host ::ng-deep .p-speeddial-list {
+  position: absolute;
+  top: 64px;
 }
 
-.user-button-item i {
-  font-size: 1.5rem;
-  color: #007ad9;
+.pi{
+  color: var(--accent);
 }
 
-.user-button-item span {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #333;
+.label{
+  font-size: 12px;
+  color: var(--accent);
 }

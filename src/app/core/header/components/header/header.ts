@@ -1,68 +1,91 @@
-import {Component, computed, inject, OnInit, signal} from '@angular/core';
-import {NavbarItem} from '../../models/navbar-item.model';
+import {Component, computed, inject} from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
-import {HeaderSearchbar} from '../header-searchbar/header-searchbar';
 import {CartButton} from '../cart-button/cart-button';
 import {AuthService} from '../../../../features/auth/services/auth.service';
 import {UserButton} from '../user-button/user-button';
-import {NAME_APP} from '../../../../shared/utilis/constants';
-import { Button } from "primeng/button";
-import { Menu } from 'primeng/menu';
-import { MenuItem } from 'primeng/api';
-import { DrawerMenu } from "../drawer-menu/drawer-menu";
+import {ABOUT_TITLE, APP_NAME, HOME_TITLE, LOGIN_TITLE, PRODUCTS_TITLE, SUPPORT_TITLE} from '../../../../shared/utilis/constants';
+
+import { MegaMenuItem } from 'primeng/api';
+import { MegaMenu } from 'primeng/megamenu';
+import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   imports: [
     RouterLink,
     RouterLinkActive,
-    HeaderSearchbar,
     CartButton,
     UserButton,
-    Button,
-    Menu,
-    DrawerMenu
+    MegaMenu,
+    ButtonModule,
+    CommonModule
 ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header implements OnInit {
+export class Header {
   authService = inject(AuthService);
   isAuthenticated = this.authService.isAuthenticated;
 
-  nameApp: string = NAME_APP;
-
-  items: MenuItem[] | undefined;
-
-  navbarItems: NavbarItem[] = [
-    {name: "Accueil", link: "/"},
-    {name: "Nos produits", link: "/products"},
-    {name: "A propos", link: "/about"},
-    {name: "Support", link: "/support"}
+  meagaMenuItemArrayAuthenticate: MegaMenuItem[] = [
+    {
+      label: HOME_TITLE,
+      root: true,
+      url: "/"
+    },
+    {
+      label: PRODUCTS_TITLE,
+      root: true,
+      url: "/products"
+    },
+    {
+      label: ABOUT_TITLE,
+      root: true,
+      url: "/about"
+    },
+    {
+      label: SUPPORT_TITLE,
+      root: true,
+      url: "/support"
+    }
   ];
 
-  ngOnInit(): void {
-    this.items = [
-      {
-          label: 'Accueil',
-          url: "/"
-      },
-      {
-          label: 'Nos produits',
-          url: "/products"
-      },
-      {
-          label: 'A propos',
-          url: "/about"
-      },
-      {
-          label: 'Support',
-          url: "/support"
-      },
-      {
-          label: 'Connexion',
-          url: "/login"
-      }
-    ];
-  }
+  meagaMenuItemArray: MegaMenuItem[] = [
+    {
+      label: HOME_TITLE,
+      root: true,
+      url: "/"
+    },
+    {
+      label: PRODUCTS_TITLE,
+      root: true,
+      url: "/products"
+    },
+    {
+      label: ABOUT_TITLE,
+      root: true,
+      url: "/about"
+    },
+    {
+      label: SUPPORT_TITLE,
+      root: true,
+      url: "/support"
+    },
+    {
+      label: LOGIN_TITLE,
+      root: true,
+      url: "/login"
+    }
+  ];
+
+  items = computed(() => {
+    if(this.isAuthenticated()){
+      return this.meagaMenuItemArrayAuthenticate;
+    }else{
+      return this.meagaMenuItemArray;
+    }
+  })
+
+  nameApp: string = APP_NAME;
 }
