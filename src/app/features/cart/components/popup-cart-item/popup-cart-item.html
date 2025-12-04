@@ -1,7 +1,7 @@
 <div class="cart-item">
-  <img [ngSrc]="product().card.image + '/high.webp'" [alt]="product().card.name" width="50" height="69" class="product-image">
+  <img [ngSrc]="product().image" [alt]="product().name" width="50" height="69" class="product-image">
   <div class="product-details">
-    <p>{{product().card.name}}</p>
+    <p>{{product().name}}</p>
     <app-price-indicator [price]="product().price" [discount]="product().discount"></app-price-indicator>
     <div class="quantity-selector">
       <button class="minus-btn" (click)="decreaseQuantity()">−</button>

@@ -16,7 +16,7 @@ export class CartStore {
   }
 
   removeAllProduct(product: Product): void {
-    this.cartSignal.update(products => products.filter((element, index) => element.card.id !== product.card.id));
+    this.cartSignal.update(products => products.filter((element, index) => element.id !== product.id));
   }
 
   removeProduct(product: Product): void {

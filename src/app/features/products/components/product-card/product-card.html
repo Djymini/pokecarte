@@ -3,12 +3,12 @@
     <p class="promotion-indicator">-{{product().discount}}%</p>
   }
   <div class="product-card-container">
-    <app-card [cardImage]="product().card.image" [width]="cardWidth" [height]="cardHeight" [cardName]="product().card.name" [id]="product().card.id"></app-card>
+    <app-card [cardImage]="product().image" [width]="cardWidth" [height]="cardHeight" [cardName]="product().name" [id]="product().id"></app-card>
   </div>
 
   <div class="info-container">
     <div class="title-container">
-      <h3>{{ product().card.name }}</h3>
+      <h3>{{ product().name }}</h3>
       <app-stock-indicator [stockValue]="product().stock"></app-stock-indicator>
     </div>
 

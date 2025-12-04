@@ -14,7 +14,7 @@ import {PriceIndicator} from '../../../products/components/price-indicator/price
 export class CartProduct {
   product = input.required<Product>();
   products = input.required<Product[]>();
-  numberSameProduct = computed(() => this.products().filter((element) => element.card.id === this.product().card.id).length)
+  numberSameProduct = computed(() => this.products().filter((element) => element.id === this.product().id).length)
 
   private cartStore = inject(CartStore);
 

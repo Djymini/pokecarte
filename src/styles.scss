@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
+@import "./tailwind.css";
 
 :root {
   --text: #050315;
@@ -64,50 +65,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
   font-family: 'Jersey25', sans-serif;
 }
 
 
 
 @layer app {
-  .p-badge-info,
-  .p-tag-info {
-    background-color: #433BFFFF !important;
-    color: #433BFFFF !important;
-  }
-
-  .pi {
-    font-size: var(--p-icon-size);
-    color: #433BFFFF;
-  }
-
-  .p-button{
-    background-color: #433BFFFF;
-  }
-
-  .p-overlaybadge{
-    margin: 0 10px;
-  }
-
-  .p-speeddial {
-    margin-top: 1.5px;
-  }
-
-  .p-carousel-indicator-active .p-carousel-indicator-button {
-    background-color: var(--accent) !important;
-  }
-
-  .p-carousel-indicator-button:hover {
-    background: var(--secondary) !important;
-  }
-
-  .p-speeddial-list{
-    position: absolute;
-    top: 52px;
-    right: 2px;
-  }
-
-  .user-button.pi-button {
-    margin: auto;
-  }
 }
