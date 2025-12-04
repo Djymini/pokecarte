@@ -20,7 +20,7 @@ export class PopupCartItem {
 
   product = input.required<Product>();
   products = this.cartStore.cart;
-  numberSameProduct = computed(() => this.products().filter((element) => element.card.id === this.product().card.id).length)
+  numberSameProduct = computed(() => this.products().filter((element) => element.id === this.product().id).length)
 
   increaseQuantity(){
     this.cartFacade.addToCart(this.product());

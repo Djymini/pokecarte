@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 import {BaseApi} from '../../../shared/services/base.api';
 import {Card} from '../models/card.model';
+import { Product } from '../../products/models/product.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CardApi extends BaseApi {
-  getRecentCard(): Promise<Card[]>{
-    return this.get<Card[]>('cards?image=notnull:&sort:field=updated&sort:order=DESC&pagination:itemsPerPage=10')
+  getRecentCard(): Promise<Product[]> {
+    return this.get<Product[]>(
+      '/products'
+    );
   }
 
-  getCardByName(name: String): Promise<Card[]>{
-    return this.get<Card[]>(`cards?id=${name}`)
+  getCardByName(name: String): Promise<Product[]> {
+    return this.get<Product[]>(`/products`);
   }
 }

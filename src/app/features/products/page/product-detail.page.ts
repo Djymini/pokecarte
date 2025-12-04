@@ -60,8 +60,8 @@ import {CartFacade} from '../../cart/services/cart.facade';
 
       <div class="card-image">
         @if (product !== undefined) {
-          <app-card [cardImage]="product.card.image" [cardName]="product.card.name" [width]="'388'"
-                    [height]="'590'" [id]="product.card.id"></app-card>
+          <app-card [cardImage]="product.image" [cardName]="product.name" [width]="'388'"
+                    [height]="'590'" [id]="product.id"></app-card>
         }
       </div>
     </div>
@@ -262,7 +262,7 @@ export default class ProductDetailPage implements OnInit {
     });
 
     console.log(this.id);
-    this.product = this.productStore.products().find((element) => element.card.id === this.id);
+    this.product = this.productStore.products().find((element) => element.id === this.id);
     this.detail = this.route.snapshot.data['detail'];
 
     console.log(this.detail);

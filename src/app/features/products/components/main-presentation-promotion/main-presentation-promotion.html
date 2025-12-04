@@ -3,14 +3,14 @@
   <div class="product__photo">
     <div class="photo-container">
       <div class="photo-main">
-        <app-card [cardImage]="product().card.image" [width]="widthCard" [height]="heightCard" [cardName]="product().card.name" [id]="product().card.id"></app-card>
+        <app-card [cardImage]="product().image" [width]="widthCard" [height]="heightCard" [cardName]="product().name" [id]="product().id"></app-card>
       </div>
     </div>
   </div>
   <div class="product__info">
     <div class="title">
-      <h3>{{ product().card.name }}</h3>
-      <span>ref : {{product().card.id}}</span>
+      <h3>{{ product().name }}</h3>
+      <span>ref : {{product().id}}</span>
       <app-stock-indicator [stockValue]="product().stock"></app-stock-indicator>
     </div>
     <div class="price">

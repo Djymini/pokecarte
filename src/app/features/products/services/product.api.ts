@@ -9,18 +9,18 @@ import {CardDetail} from '../../card/models/card-detail.model';
 })
 export class ProductApi extends BaseApi{
   getProductDetail(id:string){
-    return this.get<CardDetail>("cards/"+id);
+    return this.get<CardDetail>("/products/"+id);
   }
 
   getProduct(){
-    return this.getLocalData<Product[]>("product.json");
+    return this.get<Product[]>("/products");
   }
 
   getProductsHype(){
-    return this.getLocalData<Product[]>("product-hype.json");
+    return this.getLocalData<Product[]>("/products");
   }
 
   getProductMainPromotion(){
-    return this.getLocalData<Product[]>("main-promotion.json");
+    return this.getLocalData<Product[]>("/products");
   }
 }

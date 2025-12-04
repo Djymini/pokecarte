@@ -47,13 +47,26 @@ export class ProductForm {
   onSubmit() {
     if(this.cardInfo() !== null){
       const newProduct: Product = {
-        card: this.cardInfo()!,
+        id: 'test',
+        name: 'test',
+        image: 'test',
+        category: 'test',
+        illustrator: 'test',
+        rarity: 'test',
+        hp: 100,
+        description: 'test',
+        setId: "test",
+        stage: 'test',
+        retreat: 1,
         price: this.productForm.getRawValue().price,
         stock: this.productForm.getRawValue().stock,
-        discount: this.productForm.getRawValue().discount
-      }
+        discount: this.productForm.getRawValue().discount,
+        types: [],
+        weaknesses: [],
+        resistances: [],
+      };
       this.productFacade.addProduct(newProduct);
-      this.messageService.add({ severity: 'success', summary: 'Info', detail: `la carte ${newProduct.card.name} a été ajouté aux produits`, life: 3000 });
+      this.messageService.add({ severity: 'success', summary: 'Info', detail: `la carte ${newProduct.name} a été ajouté aux produits`, life: 3000 });
     }
   }
 }
