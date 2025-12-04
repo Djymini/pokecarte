@@ -16,13 +16,13 @@ export class ProductStore {
     let result: Product[] = [];
 
     if(this.query() !== ""){
-      result = this.products().filter((item: Product) => item.card.name.toLowerCase().includes(this.query().toLowerCase()));
+      result = this.products().filter((item: Product) => item.name.toLowerCase().includes(this.query().toLowerCase()));
     }else {
       result = this.products();
     }
 
     if(this.setFilter().length >= 1){
-      result = result.filter((item: Product) => this.setFilter().includes(item.card.id.split("-")[0]))
+      result = result.filter((item: Product) => this.setFilter().includes(item.id.split("-")[0]))
     }
 
     console.log("coucou2")
@@ -38,7 +38,7 @@ export class ProductStore {
   }
 
   removeUser(id: string): void {
-    this.productsSignal.update(products => products.filter(product => product.card.id !== id));
+    this.productsSignal.update(products => products.filter(product => product.id !== id));
   }
 
   updateProducts(newProduct: Product[]): void {
