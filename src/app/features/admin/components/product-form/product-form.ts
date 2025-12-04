@@ -62,7 +62,7 @@ export class ProductForm {
         stock: this.productForm.getRawValue().stock,
         discount: this.productForm.getRawValue().discount,
         types: [],
-        weaknesses: [],
+        weakness: [],
         resistances: [],
       };
       this.productFacade.addProduct(newProduct);
