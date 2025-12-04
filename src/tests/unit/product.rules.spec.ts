@@ -7,21 +7,29 @@ describe('ProductRules (unit tests)', () => {
   // 1. Arrange
   beforeEach(() => {
     product = {
-      card: {
-        id: "xyp-XY99",
-        localId: "XY99",
-        name: "Lien Spirituel Ptéra",
-        image: "https://assets.tcgdex.net/fr/xy/xyp/XY99"
-      },
-      price: 12.00,
-      stock: 15,
-      discount: 50
-    }
+      id: 'swsh1-1',
+      name: 'Celebi V',
+      image: 'https://assets.tcgdex.net/fr/swsh/swsh1/1/high.webp',
+      category: 'Pokemon',
+      illustrator: 'PLANETA Igarashi',
+      rarity: 'Holo Rare V',
+      hp: 180,
+      description: '',
+      stage: 'De base',
+      retreat: 1,
+      price: 2.27,
+      stock: 37,
+      discount: 0.0,
+      setId: 'swsh1',
+      types: [],
+      weakness: [],
+      resistances: [],
+    };
   });
 
   it('should apply discount correctly', () => {
     const truePrice = ProductRules.applyDiscount(product);
-    expect(truePrice).toBe(6);
+    expect(truePrice).toBe(2.27);
   });
 
   it('should throw error if discount < 0 or > 100', () => {

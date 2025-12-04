@@ -19,7 +19,7 @@ export type Product = {
     type: string,
     value: string,
   }[],
-  weaknesses: {
+  weakness: {
     type: string,
     value: string,
   }[],
